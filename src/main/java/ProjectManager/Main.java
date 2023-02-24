@@ -4,18 +4,27 @@
  * and open the template in the editor.
  */
 package ProjectManager;
-
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import util.ConnectionFactory;
 /**
  *
  * @author Mayra
  */
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        System.out.println("Mayra");
+    
+    public static void main(String[] args) throws SQLException {
+
+      
+       
+          Connection c = ConnectionFactory.getConnection();
+        
+        ConnectionFactory.closeConnection(c);
+        
+        System.out.println("abrindo");
+        
     }
     
 }

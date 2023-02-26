@@ -19,10 +19,12 @@ public class Main {
     
     public static void main(String[] args) throws SQLException {
 
+      ProjectController projectController = new ProjectController();
+        
       Project project = new Project();
       project.setName("projeto Teste");
       project.setDescription("description");
-      //ProjectController.save(project);
+      projectController.save(project);
          
         
     }

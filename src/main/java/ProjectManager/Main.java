@@ -4,9 +4,11 @@
  * and open the template in the editor.
  */
 package ProjectManager;
+import controller.ProjectController;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import model.Project;
 import util.ConnectionFactory;
 /**
  *
@@ -17,13 +19,11 @@ public class Main {
     
     public static void main(String[] args) throws SQLException {
 
-      
-       
-          Connection c = ConnectionFactory.getConnection();
-        
-        ConnectionFactory.closeConnection(c);
-        
-        System.out.println("abrindo");
+      Project project = new Project();
+      project.setName("projeto Teste");
+      project.setDescription("description");
+      //ProjectController.save(project);
+         
         
     }
     

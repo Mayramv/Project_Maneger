@@ -22,7 +22,7 @@ import util.ConnectionFactory;
  */
 public class ProjectController{
       public void save(Project project) {
-        String sql = "INSERT INTO projects (Name"
+        String sql = "INSERT INTO projects (Name,"
                 + "Description,"
                 + "CreatedAt,"
                 + "UpdatedAt) VALUE (?,?,?,?)";
@@ -48,12 +48,10 @@ public class ProjectController{
 
     public void updade(Project project) {
 
-        String sql = " UPDATE projects SET"
-                + "Name = ?, "
+        String sql = "UPDATE projects SET Name = ?, "
                 + "Description = ?, "
-                + "CreatedAt = ? "
-                + "UpdatedAt = ? "
-                + "WHERE id = ? ";
+                + "CreatedAt = ?, "
+                + "UpdatedAt = ?,WHERE id =?";
 
         Connection connection = null;
         PreparedStatement statement = null;

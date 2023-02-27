@@ -19,7 +19,8 @@ public class Project {
     }
 
     public Project() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.createdAt = new Date(); 
+        this.UpdatedAt = new Date();
     }
 
     public int getId() {

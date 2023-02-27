@@ -23,13 +23,13 @@ import util.ConnectionFactory;
 public class TaskController {
 
     public void save(Task task) {
-        String sql = "INSERT INTO tasks (idprojects"
+        String sql = "INSERT INTO tasks (idprojects,"
                 + "Name,"
                 + "Description,"
                 + "Completed,"
                 + "Notes,"
                 + "Deadline,"
-                + "CreatedAt"
+                + "CreatedAt,"
                 + "UpdatedAt) VALUE (?,?,?,?,?,?,?,?)";
         Connection connection = null;
         PreparedStatement statement = null;
@@ -57,14 +57,13 @@ public class TaskController {
 
     public void updade(Task task) {
 
-        String sql = " UPDATE tasks SET"
-                + "idprojects = ?, "
+        String sql = " UPDATE tasks SET idprojects = ?, "
                 + "Name = ?, "
                 + "Description = ?, "
                 + "Completed = ?, "
                 + "Notes = ?, "
                 + "Deadline = ?, "
-                + "CreatedAt = ? "
+                + "CreatedAt = ?, "
                 + "UpdatedAt = ? "
                 + "WHERE id = ? ";
 
@@ -100,7 +99,7 @@ public class TaskController {
     }
 
     public void removeBy(int taskId) throws SQLException {
-        String sql = "DELETE FROM task WHERE id = ?";
+        String sql = "DELETE FROM tasks WHERE id = ?";
 
         Connection connection = null;
         PreparedStatement statement = null;
@@ -111,15 +110,15 @@ public class TaskController {
             statement.setInt(1, taskId);
             statement.execute();
         } catch (SQLException ex) {
-            throw new RuntimeException("Erro ao salvar a tarefa"
+            throw new RuntimeException("Erro ao deletar a tarefa"
                     + ex.getMessage(), ex);
         } finally {
             ConnectionFactory.closeConnection(connection, statement);
         }
     }
 
-    public List<Task> getAll(int idProject) {
-        String sql = "SELECT * FROM  tasks WHERE idProject = ?";
+    public List<Task> getAll(int idProjects) {
+        String sql = "SELECT * FROM  tasks WHERE idProjects = ?";
         
         Connection connection = null;
         PreparedStatement statement = null;
@@ -133,7 +132,7 @@ public class TaskController {
             statement = connection.prepareStatement(sql);
             
             //setando o vallor que corresponde ao filtro de buscar
-            statement.setInt(1, idProject);
+            statement.setInt(1, idProjects);
             
             // valor retornado da Query
             resultSet = statement.executeQuery();
@@ -144,21 +143,21 @@ public class TaskController {
                  
                 Task task = new Task ();
                 task.setId(resultSet.getInt("id"));
-                task.setIdProject(resultSet.getInt("idProject"));
+                task.setIdProject(resultSet.getInt("idProjects"));
                 task.setName(resultSet.getString("Name"));
                 task.setDescription(resultSet.getString("Description"));
                 task.setNotes(resultSet.getString("Notes"));
                 task.setIsCompleted(resultSet.getBoolean("Completed"));
                 task.setDeadline(resultSet.getDate("Deadline"));
                 task.setCreatedAt(resultSet.getDate("CreatedAt"));
-                task.setUpdatedAt(resultSet.getDate("UpdatedA"));
+                task.setUpdatedAt(resultSet.getDate("UpdatedAt"));
                 
                 tasks.add(task);
                 
                  }
             
         } catch (SQLException ex) {
-        throw new RuntimeException("Erro ao salvar a tarefa"
+        throw new RuntimeException("Erro ao listar a tarefa"
                     + ex.getMessage(), ex);
         } finally {
             ConnectionFactory.closeConnection(connection, statement, resultSet);

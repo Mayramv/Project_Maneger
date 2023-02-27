@@ -48,10 +48,11 @@ public class ProjectController{
 
     public void updade(Project project) {
 
-        String sql = "UPDATE projects SET Name = ?, "
-                + "Description = ?, "
-                + "CreatedAt = ?, "
-                + "UpdatedAt = ?,WHERE id =?";
+        String sql = "UPDATE projects SET name = ?, "
+               + "Description = ?, "
+               + "CreatedAt = ?, "
+                + "UpdatedAt = ? WHERE id =?";
+         
 
         Connection connection = null;
         PreparedStatement statement = null;
@@ -110,14 +111,14 @@ public class ProjectController{
                project.setName(resultSet.getString("Name"));
                project.setDescription(resultSet.getString("Description"));
                project.setCreatedAt(resultSet.getDate("CreatedAt"));
-               project.setUpdatedAt(resultSet.getDate("UpdatedA"));
+               project.setUpdatedAt(resultSet.getDate("UpdatedAt"));
                 
                 projects.add(project);
                 
                  }
             
         } catch (SQLException ex) {
-        throw new RuntimeException("Erro ao salvar a projeto"
+        throw new RuntimeException("Erro ao listar a projetos"
                     + ex.getMessage(), ex);
         } finally {
             ConnectionFactory.closeConnection(connection, statement, resultSet);
@@ -126,19 +127,19 @@ public class ProjectController{
         return projects;
     }
 
-    public void removeBy(int idProject) throws SQLException {
-        String sql = "DELETE FROM project WHERE id = ?";
-
+    public void removeBy(int id) throws SQLException {
+        String sql = "DELETE FROM projects WHERE id = ?";
+         
         Connection connection = null;
         PreparedStatement statement = null;
 
         try {
             connection = ConnectionFactory.getConnection();
             statement = connection.prepareStatement(sql);
-            statement.setInt(1,idProject);
+            statement.setInt(1,id);
             statement.execute();
         } catch (SQLException ex) {
-            throw new RuntimeException("Erro ao salvar a tarefa"
+            throw new RuntimeException("Erro ao deletar projetos"
                     + ex.getMessage(), ex);
         } finally {
             ConnectionFactory.closeConnection(connection, statement);

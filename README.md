@@ -6,7 +6,7 @@ conceitos do paradigma de orientação a objetos,conexão e  manipulação do ba
 
 ## 🔨Funcionalidades do projeto
 
- 🔨 Gerenciamento de Projetos: Nosso sistema permite você gerenciar seus projetos através das seguintes funcionalidades:  cadastrar, alterar, remover e listar  projetos
+ 🔨 Gerenciamento de Projetos: Nosso sistema permite você gerenciar seus projetos através das seguintes funcionalidades:  cadastrar, alterar, remover e listar  projetos. 
 
 O cadastro dos projetos contém os seguintes dados:
 
@@ -16,7 +16,7 @@ O cadastro dos projetos contém os seguintes dados:
 * CreatedAt
 * UpdatedAt
  
-  🔨 Gerenciamentos de Tarefas: Nosso sistema permite você adicionar, remover, alterar e listar  tarefas em  projeto cadastrado.
+ 🔨 Gerenciamentos de Tarefas: Nosso sistema permite você adicionar, remover, alterar e listar  tarefas em  projeto cadastrado.
 
 O cadastro das tarefas contém os seguintes dados:
 
@@ -29,12 +29,4 @@ O cadastro das tarefas contém os seguintes dados:
 * Deadline
 * CreatedAt
 * UpdatedAt
-
-## ✔️Técnicas e tecnologias utilizadas
-
-Java 8
-NetBeans  IDE
-MYSQL
-Paradigma de orientação a objetos
-
 

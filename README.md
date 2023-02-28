@@ -32,14 +32,7 @@ O cadastro das tarefas contém os seguintes dados:
 
 ## ✔️Técnicas e tecnologias utilizadas
 
-Java 
-
-NetBeans IDEA
-
-MYSQL
-
-Paradigma de orientação a objetos
-
-
-
-
+* Java
+*  NetBeans
+*  MYSQL
+*  Paradigma de orientação a objetos

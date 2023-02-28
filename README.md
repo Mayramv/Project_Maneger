@@ -24,7 +24,7 @@ O cadastro das tarefas contém os seguintes dados:
 * idprojects
 * Name 
 * Description
-* Completed 
+* Completed (check)
 * Notes 
 * Deadline
 * CreatedAt

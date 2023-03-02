@@ -24,19 +24,19 @@ public class Main {
     
     public static void main(String[] args) throws SQLException {
 
-     // ProjectController projectController = new ProjectController();
+      //ProjectController projectController = new ProjectController();
         
       //Project project = new Project();
       //project.setName("projeto Teste");
      // project.setDescription("description");
-     // projectController.save(project);
+     //projectController.save(project);
       
-      //ProjectController projectController = new ProjectController();
-      //Project project = new Project();
-     // project.setId(1);
-     // project.setName("novo nome do projeto de novo");
-      //project.setDescription("description");
-      //projectController.updade(project);
+      ProjectController projectController = new ProjectController();
+      Project project = new Project();
+      project.setId(1);
+      project.setName("novo nome do projeto de novo");
+      project.setDescription("description");
+     projectController.updade(project);
       
      /// List<Project> projects = projectController.getAll();
        // System.out.println("Total de projetos e: " + projects.size());

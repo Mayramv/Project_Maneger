@@ -135,7 +135,7 @@ public class MainScreen extends javax.swing.JFrame {
         jLabelTasksTitle.setText("Tarefas");
 
         jLabelTasksAdd.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelTasksAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botao.png"))); // NOI18N
+        jLabelTasksAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mais.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanelTasksLayout = new javax.swing.GroupLayout(jPanelTasks);
         jPanelTasks.setLayout(jPanelTasksLayout);

@@ -32,40 +32,40 @@ public class Main {
      //projectController.save(project);
       
       ProjectController projectController = new ProjectController();
-      Project project = new Project();
-      project.setId(1);
-      project.setName("novo nome do projeto de novo");
+     Project project = new Project();
+      project.setId(7);
+      project.setName("Novo Projeto teste");
       project.setDescription("description");
-     projectController.updade(project);
+    projectController.updade(project);
       
      /// List<Project> projects = projectController.getAll();
        // System.out.println("Total de projetos e: " + projects.size());
        
-        //projectController.removeBy(2);
+       // projectController.removeBy(9);
         
-        //TaskController taskController = new  TaskController();
-        //Task task = new Task();
-        //task.setIdProject(1);
-        //task.setName("minha novo tarefa 2");
-        //task.setDescription(" novo descriçao");
-       //task.setNotes("testando");
-       //task.setIsCompleted(true);
-       //task.setDeadline(new Date());
+       // TaskController taskController = new  TaskController();
+       // Task task = new Task();
+       // task.setIdProject(1);
+       // task.setName("Tarefa teste ");
+       // task.setDescription(" descriçao");
+        //task.setNotes("testando");
+        //task.setIsCompleted(true);
+         //task.setDeadline(new Date());
         
-       // taskController.save(task);
+        //taskController.save(task);
         
-     TaskController taskController = new  TaskController();
-      Task task = new Task();
-      task.setId(1);
-     task.setIdProject(1);
-      task.setName("testando");
-     task.setDescription("description");
-      taskController.updade(task);        
+    // TaskController taskController = new  TaskController();
+     // Task task = new Task();
+     // task.setId(1);
+     //task.setIdProject(1);
+      //task.setName("testando");
+    // task.setDescription("description");
+      //taskController.updade(task);        
       
-      List<Task> tasks = taskController.getAll(1);
-       System.out.println("Total de tarefas e: " + tasks.size());
+      //List<Task> tasks = taskController.getAll(1);
+       //System.out.println("Total de tarefas e: " + tasks.size());
        
-       taskController.removeBy(2);
+       //taskController.removeBy(2);
      
         
       
